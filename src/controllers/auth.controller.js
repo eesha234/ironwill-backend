@@ -137,7 +137,7 @@ async function login(req, res, next) {
 
     setRefreshCookie(res, refreshToken);
 
-    return sendSuccess(res, { accessToken, user: user.toPublic() }, "Login successful");
+return sendSuccess(res, { accessToken, refreshToken, user: user.toPublic() }, "Login successful");
   } catch (err) {
     next(err);
   }
@@ -210,7 +210,7 @@ async function refresh(req, res, next) {
 
     setRefreshCookie(res, newRefreshToken);
 
-    return sendSuccess(res, { accessToken: newAccessToken, user: user.toPublic() }, "Token refreshed");
+return sendSuccess(res, { accessToken: newAccessToken, refreshToken: newRefreshToken, user: user.toPublic() }, "Token refreshed");
   } catch (err) {
     next(err);
   }
