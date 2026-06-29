@@ -1,4 +1,5 @@
 "use strict";
+
 const express = require("express");
 const router = express.Router();
 const { handshake, receiveData, getRequest, deviceCmd } = require("../controllers/admsController");
