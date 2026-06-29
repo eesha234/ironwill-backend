@@ -17,8 +17,8 @@ router.get("/:id", getPlan);
 // Mutations are Admin-only
 router.post("/", requireRole("Admin"), createPlan);
 router.put("/:id", requireRole("Admin"), updatePlan);
-router.patch("/:id", requireRole("Admin"), updatePlan);
 router.patch("/:id/toggle-active", requireRole("Admin"), togglePlanActive);
+router.patch("/:id", requireRole("Admin"), updatePlan);
 router.delete("/:id", requireRole("Admin"), deletePlan);
 
 module.exports = router;
