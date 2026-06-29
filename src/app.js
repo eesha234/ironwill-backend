@@ -107,6 +107,7 @@ app.use("/api/payments", paymentsRoutes);
 app.use("/api/attendance", attendanceRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/notifications", notificationsRoutes);
+app.use("/iclock", admsRoutes);
 
 // ─── 404 & Error handling ─────────────────────────────────────────────────────
 app.use(notFound);

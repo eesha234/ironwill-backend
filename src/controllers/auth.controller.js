@@ -169,7 +169,7 @@ async function logout(req, res, next) {
  */
 async function refresh(req, res, next) {
   try {
-    const token = req.cookies?.refreshToken;
+    const token = req.cookies?.refreshToken || req.body?.refreshToken;
     if (!token) {
       return sendError(res, "Refresh token not found", 401, "NO_REFRESH_TOKEN");
     }
